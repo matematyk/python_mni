@@ -1,4 +1,4 @@
-from poprawiona import DrawNodes
+from draw_node import DrawNodes
 
 START_NODE = 0
 visited = []
@@ -24,6 +24,7 @@ def dfs(graph, node):
         visited.append(node)
         for n in graph[node]:
             h.draw_nodes(n)
+            h.draw_edge(node, n)
             dfs(graph, n)
 
 
