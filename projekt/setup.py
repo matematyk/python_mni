@@ -8,7 +8,7 @@ with io.open('README.rst', 'rt', encoding='utf8') as f:
 
 setup(
     name='projekt_metodyka_nauczania',
-    version='0.0.1',
+    version='1.0.1',
     url='https://github.com/matematyk/python_mni/',
     license='MIT',
     maintainer='Marcin Wierzbinski',

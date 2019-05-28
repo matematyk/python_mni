@@ -15,6 +15,7 @@ pip install -e .
  
  
 Install: 
+Wymagany modul TK do pythona. 
 
 ```
 sudo apt-get install python3-tk
