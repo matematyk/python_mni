@@ -1,7 +1,13 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-'''To jest modul do rysowanania grafu'''
+'''To jest modul do rysowanania grafu
+Graf zadawny jest jako 
+* przekazanie grafu jako listy sąsiedztwa
+* jako slownik etykiet, konkretnych node,
+* parametr tesktowy algorytmu 
+
+'''
 
 
 class DrawNodes:
@@ -9,16 +15,19 @@ class DrawNodes:
     def __init__(self, graph, cities, text):
         plt.ion()  # interactive mode on
         self.H = nx.DiGraph(graph)
+        # przekazanie grafu jako listy sąsiedztwa
         self.graph = graph
+        # ustawienie tekstu algorytmu
         self.text = text
         self.cities = cities
+        # Zdefiniowanie figure
         self.fig = plt.figure(1, figsize=(8, 8))
         self.txt = self.fig.text(.05, .9, self.text, fontsize=15)
         self.pos = nx.drawing.layout.planar_layout(self.H)
         self.plt_figures()
 
     def plt_figures(self):
-        ax = self.fig.add_axes((0, 0, 1, 1))
+        self.fig.add_axes((0, 0, 1, 1))
         self.txt = self.fig.text(.05, .9, self.text, fontsize=15)
 
         for n in self.H:

@@ -18,16 +18,20 @@ graph = {
 h = DrawNodes(graph, cities, "DFS ALGORITHM")
 
 
-def dfs(graph, node):
-    global visited
-    if node not in visited:
-        visited.append(node)
-        for n in graph[node]:
-            h.draw_nodes(n)
-            h.draw_edge(node, n)
-            dfs(graph, n)
+
+
+def dfs(wierzcholek):
+    visited.append(wierzcholek)
+
+    for x in graph[wierzcholek]:
+        if x not in visited:
+            h.draw_nodes(x)
+            h.draw_edge(wierzcholek, x)
+            dfs(x)
+
+
 
 
 h.draw_nodes(START_NODE)  # start
 
-dfs(graph, START_NODE)
+dfs(0)
